@@ -1,0 +1,361 @@
+       :root {
+    --bg-gradient-light: linear-gradient(45deg, #4158D0, #C850C0, #FFCC70);
+    --bg-gradient-dark: linear-gradient(45deg, #1a1a1a, #2d2d2d, #3d3d3d);
+    --text-color-light: #ffffff;
+    --text-color-dark: #e0e0e0;
+    --container-bg-light: rgba(255, 255, 255, 0.2);
+    --container-bg-dark: rgba(0, 0, 0, 0.3);
+    --input-bg-light: rgba(255, 255, 255, 0.15);
+    --input-bg-dark: rgba(0, 0, 0, 0.2);
+    --button-bg-light: rgba(255, 255, 255, 0.2);
+    --button-bg-dark: rgba(255, 255, 255, 0.1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: system-ui, -apple-system, sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    transition: background 0.3s ease;
+}
+
+body.light-theme {
+    background: var(--bg-gradient-light);
+    color: var(--text-color-light);
+}
+
+body.dark-theme {
+    background: var(--bg-gradient-dark);
+    color: var(--text-color-dark);
+}
+
+.container {
+    width: 100%;
+    max-width: 1000px;
+    backdrop-filter: blur(20px);
+    border-radius: 24px;
+    padding: 32px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
+}
+
+.light-theme .container {
+    background: var(--container-bg-light);
+}
+
+.dark-theme .container {
+    background: var(--container-bg-dark);
+}
+
+/* Rest of the existing CSS styles... */
+
+.theme-toggle {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: transparent;
+    border: none;
+    color: inherit;
+    font-size: 1.5em;
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 50%;
+    transition: background-color 0.3s ease;
+}
+
+.theme-toggle:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.clear-btn {
+    background: transparent;
+    border: none;
+    color: inherit;
+    padding: 4px 8px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.clear-btn:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+	   * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: system-ui, -apple-system, sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            background: linear-gradient(45deg, #4158D0, #C850C0, #FFCC70);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1000px;
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(20px);
+            border-radius: 24px;
+            padding: 32px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 32px;
+            color: white;
+        }
+
+        .header h2 {
+            font-size: 2.8em;
+            font-weight: 700;
+            margin-bottom: 8px;
+            background: linear-gradient(to right, #fff, #e0e0e0);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .header p {
+            font-size: 1.2em;
+            opacity: 0.9;
+        }
+
+        .translation-box {
+            display: grid;
+            grid-template-columns: 1fr auto 1fr;
+            gap: 24px;
+            align-items: center;
+        }
+
+        .input-section {
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 20px;
+            padding: 24px;
+            height: 100%;
+        }
+
+        .language-bar {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 16px;
+            position: relative;
+        }
+
+select {
+    flex: 1;
+    appearance: none;
+    -webkit-appearance: none;
+    background: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 12px 40px 12px 20px;
+    border-radius: 12px;
+    color: white; /* Make text white */
+    font-size: 1.1em;
+    cursor: pointer;
+    outline: none;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(5px);
+}
+
+/* Style for the options dropdown */
+select option {
+    background: #2a2a2a;
+    color: white;
+    padding: 12px;
+    font-size: 1em;
+}
+
+/* Style for option groups */
+select optgroup {
+    background: #1a1a1a;
+    color: #fff;
+    font-size: 1.1em;
+    padding: 8px;
+}
+
+/* Add a custom arrow */
+.language-bar {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 16px;
+    position: relative;
+}
+
+.language-bar::after {
+    content: '\f107';
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: white;
+    pointer-events: none;
+    font-size: 1.2em;
+}
+
+/* Hover and focus states */
+select:hover {
+    background: rgba(255, 255, 255, 0.25);
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+select:focus {
+    background: rgba(255, 255, 255, 0.3);
+    border-color: rgba(255, 255, 255, 0.4);
+    box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.1);
+}
+
+/* Custom scrollbar for select dropdown */
+select::-webkit-scrollbar {
+    width: 8px;
+}
+
+select::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+}
+
+select::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 4px;
+}
+
+select::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.4);
+}
+
+/* Firefox specific styles */
+@-moz-document url-prefix() {
+    select {
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+        background-repeat: no-repeat;
+        background-position: right 10px center;
+        background-size: 16px;
+        padding-right: 40px;
+    }
+    
+    .language-bar::after {
+        display: none;
+    }
+}
+
+/* Responsive design */
+@media (max-width: 480px) {
+    select {
+        padding: 10px 35px 10px 15px;
+        font-size: 1em;
+    }
+    
+    .language-bar::after {
+        right: 12px;
+        font-size: 1em;
+    }
+}
+
+        textarea {
+            width: 100%;
+            min-height: 150px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 16px;
+            padding: 20px;
+            color: white;
+            font-size: 1.2em;
+            line-height: 1.5;
+            resize: none;
+            outline: none;
+            transition: all 0.3s ease;
+        }
+
+        .swap-btn {
+            background: rgba(255, 255, 255, 0.2);
+            border: none;
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .swap-btn:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: scale(1.1);
+        }
+
+        .controls {
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+            margin-top: 24px;
+        }
+
+        .action-btn {
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            border: none;
+            padding: 14px 28px;
+            border-radius: 12px;
+            font-size: 1.1em;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .action-btn:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: translateY(-2px);
+        }
+
+        .action-btn.primary {
+            background: linear-gradient(45deg, #4158D0, #C850C0);
+        }
+
+        .char-count {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 0.9em;
+            text-align: right;
+            margin-top: 8px;
+        }
+
+        @media (max-width: 768px) {
+            .translation-box {
+                grid-template-columns: 1fr;
+            }
+            
+            .swap-btn {
+                margin: 16px auto;
+                transform: rotate(90deg);
+            }
+        }
+
+        [dir="rtl"] {
+            text-align: right;
+        }
+
+        *:focus-visible {
+            outline: 3px solid rgba(255, 255, 255, 0.5);
+            outline-offset: 2px;
+        }
